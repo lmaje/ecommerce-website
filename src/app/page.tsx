@@ -1,65 +1,130 @@
-import Image from "next/image";
+import Link from 'next/link'
+import Image from 'next/image'
+import { Suspense } from 'react'
+import { ProductCard } from '@/components/product-card'
+import { ProductCardSkeleton } from '@/components/product-card-skeleton'
+import { FEATURED_PRODUCTS, CATEGORIES } from '@/lib/products'
+
+const GREEN = '#0B4D13'
+const GOLD = '#C9A227'
+
+async function FeaturedProductGrid() {
+  const products = FEATURED_PRODUCTS
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      {products.map(product => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
+  )
+}
+
+function FeaturedProductGridSkeleton() {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      {Array.from({ length: 8 }).map((_, i) => (
+        <ProductCardSkeleton key={i} />
+      ))}
+    </div>
+  )
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="flex flex-col">
+
+      {/* Hero */}
+      <section className="relative overflow-hidden" style={{ backgroundColor: GREEN }}>
+        <div
+          className="absolute inset-0 opacity-[0.06]"
+          style={{ backgroundImage: `repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)`, backgroundSize: '24px 24px' }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+        <div className="relative max-w-7xl mx-auto px-6 py-16 text-center">
+          <Image
+            src="/logo.webp"
+            alt="Bakhtar Market"
+            width={100}
+            height={100}
+            className="rounded-full mx-auto mb-6 ring-4 ring-white/20"
+          />
+          <p className="text-sm font-medium tracking-widest uppercase mb-4" style={{ color: GOLD }}>
+            Afghan &amp; International Groceries · Delivered UK-Wide
           </p>
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+            Taste the <span style={{ color: GOLD }}>Tradition</span>
+          </h1>
+          <p className="text-white/70 text-lg max-w-md mx-auto mb-8">
+            Authentic Afghan and international groceries, spices, and pantry staples — sourced directly and delivered to your door.
+          </p>
+          <Link
+            href="/shop"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm text-white transition-transform hover:scale-105"
+            style={{ backgroundColor: GOLD }}
+          >
+            Browse the Shop →
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      </section>
+
+      {/* Category scroll */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 py-5">
+          <div className="flex gap-3 overflow-x-auto pb-1 no-scrollbar">
+            {CATEGORIES.map(cat => (
+              <Link
+                key={cat.id}
+                href={`/shop?cat=${cat.id}`}
+                className="flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 hover:border-gray-400 text-sm font-medium text-gray-700 transition-colors whitespace-nowrap"
+              >
+                <span>{cat.emoji}</span>
+                <span>{cat.name}</span>
+                <span className="text-gray-400 text-xs">({cat.count})</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured products */}
+      <main className="max-w-7xl mx-auto px-6 py-12 flex-1 w-full">
+        <h2 className="text-2xl font-bold text-gray-900 mb-8">Featured Products</h2>
+        <Suspense fallback={<FeaturedProductGridSkeleton />}>
+          <FeaturedProductGrid />
+        </Suspense>
+        <div className="mt-10 flex justify-center">
+          <Link
+            href="/shop"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-sm text-white transition-transform hover:scale-105"
+            style={{ backgroundColor: GREEN }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            View All Products →
+          </Link>
         </div>
       </main>
+
+      {/* Newsletter */}
+      <section className="py-16 px-6" style={{ backgroundColor: GREEN }}>
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-white mb-2">Stay in the loop</h2>
+          <p className="text-white/60 mb-6 text-sm">New arrivals, seasonal specials, and exclusive offers.</p>
+          <form className="flex gap-2 max-w-sm mx-auto">
+            <input
+              type="email"
+              aria-label="Email address for newsletter"
+              placeholder="Your email address"
+              className="flex-1 px-4 py-2.5 rounded-full text-sm bg-white/10 text-white placeholder-white/40 border border-white/20 focus:outline-none focus:border-white/50"
+            />
+            <button
+              type="submit"
+              className="px-5 py-2.5 rounded-full text-sm font-semibold"
+              style={{ backgroundColor: GOLD, color: GREEN }}
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
+
     </div>
-  );
+  )
 }
