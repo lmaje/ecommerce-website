@@ -8,6 +8,15 @@ import { FEATURED_PRODUCTS, CATEGORIES } from '@/lib/products'
 const GREEN = '#0B4D13'
 const GOLD = '#C9A227'
 
+const DOTS = Array.from({ length: 30 }, (_, i) => ({
+  id: i,
+  left: `${(i * 37 + 10) % 100}%`,
+  top: `${(i * 53 + 5) % 100}%`,
+  delay: `${(i * 0.3) % 4}s`,
+  duration: `${3 + (i % 4)}s`,
+  size: i % 3 === 0 ? 4 : i % 3 === 1 ? 3 : 2,
+}))
+
 async function FeaturedProductGrid() {
   const products = FEATURED_PRODUCTS
   return (
@@ -35,10 +44,29 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ backgroundColor: GREEN }}>
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{ backgroundImage: `repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)`, backgroundSize: '24px 24px' }}
-        />
+        <style>{`
+          @keyframes floatDot {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
+            33%       { transform: translateY(-12px) translateX(5px); opacity: 1; }
+            66%       { transform: translateY(-6px) translateX(-4px); opacity: 0.8; }
+          }
+          .dot-float { animation: floatDot var(--dur) var(--delay) ease-in-out infinite; }
+        `}</style>
+        {DOTS.map(d => (
+          <span
+            key={d.id}
+            className="dot-float absolute rounded-full pointer-events-none"
+            style={{
+              left: d.left,
+              top: d.top,
+              width: d.size,
+              height: d.size,
+              backgroundColor: GOLD,
+              '--dur': d.duration,
+              '--delay': d.delay,
+            } as React.CSSProperties}
+          />
+        ))}
         <div className="relative max-w-7xl mx-auto px-6 py-16 text-center">
           <Image
             src="/logo.webp"
