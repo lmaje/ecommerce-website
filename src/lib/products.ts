@@ -20,6 +20,7 @@ export type Product = {
   variants: WeightVariant[]
   emoji: string
   bgColor: string
+  image: string
 }
 
 export const PRODUCTS: Product[] = [
@@ -36,6 +37,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🌾',
     bgColor: '#C4A35A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/webp-express/webp-images/uploads/2026/03/Photoroom_20260312_120913-pm-300x300.jpg.webp',
   },
   {
     id: 'sella-rice',
@@ -49,6 +51,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🌾',
     bgColor: '#D4B870',
+    image: 'https://bakhtarmarket.co.uk/wp-content/webp-express/webp-images/uploads/2026/03/photo_2026-03-13_16-17-59-300x300.jpg.webp',
   },
   {
     id: 'afghani-white-rice',
@@ -61,6 +64,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🍚',
     bgColor: '#E8D9A0',
+    image: 'https://bakhtarmarket.co.uk/wp-content/webp-express/webp-images/uploads/2024/10/WhatsApp-Image-2024-09-19-at-1.22.48-PM-300x300.jpeg.webp',
   },
   {
     id: 'qabuli-rice-mix',
@@ -73,6 +77,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🍛',
     bgColor: '#B8860B',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2022/02/WhatsApp-Image-2024-09-02-at-11.19.40_9f29c54b-2-300x300.webp',
   },
 
   // ── Nuts ─────────────────────────────────────────────────────────────────────
@@ -88,6 +93,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🥜',
     bgColor: '#7D9B4A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2022/02/Pistachio-Turkish-33-300x300.webp',
   },
   {
     id: 'almonds-raw',
@@ -101,6 +107,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🤍',
     bgColor: '#D2B48C',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2022/02/Almond-in-shell-afghani-300x300.webp',
   },
   {
     id: 'walnuts-halved',
@@ -114,6 +121,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🪨',
     bgColor: '#8B7355',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2022/02/Afghani-walnuts-300x300.webp',
   },
   {
     id: 'cashews-raw',
@@ -126,6 +134,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🌰',
     bgColor: '#C8A96E',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2024/09/Cashew-nuts-row-300x300.webp',
   },
 
   // ── Tea ──────────────────────────────────────────────────────────────────────
@@ -140,6 +149,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🫖',
     bgColor: '#4A7C59',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2022/02/WhatsApp-Image-2024-09-02-at-11.26.21_c424f2e2-300x300.webp',
   },
   {
     id: 'black-tea-siah-chai',
@@ -153,6 +163,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '☕',
     bgColor: '#4A3728',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2022/02/WhatsApp-Image-2024-09-02-at-11.26.19_280d60db-300x300.webp',
   },
   {
     id: 'chai-masala',
@@ -165,6 +176,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🌿',
     bgColor: '#6B4226',
+    image: 'https://bakhtarmarket.co.uk/wp-content/webp-express/webp-images/uploads/2025/02/650D98EF-9518-4A07-B607-4D4CA4C9D9C3-300x300.jpg.webp',
   },
   {
     id: 'rose-hip-tea',
@@ -177,6 +189,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🌹',
     bgColor: '#C0708A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/03/75AC3BF4-BA68-43A0-813E-FDD83AC768D9-300x300.webp',
   },
 
   // ── Cold Drinks ───────────────────────────────────────────────────────────────
@@ -190,6 +203,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🥤',
     bgColor: '#5B9BD5',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2022/02/WhatsApp-Image-2024-09-02-at-11.26.22_3cd83715-300x300.webp',
   },
   {
     id: 'pomegranate-juice',
@@ -202,6 +216,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🍹',
     bgColor: '#9B2335',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2024/09/Dark-mulberries-300x300.webp',
   },
   {
     id: 'mango-drink',
@@ -214,6 +229,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🥭',
     bgColor: '#F4A823',
+    image: 'https://bakhtarmarket.co.uk/wp-content/webp-express/webp-images/uploads/2025/11/Mango-300x300.png.webp',
   },
   {
     id: 'tamarind-sharbat',
@@ -225,6 +241,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🍋',
     bgColor: '#8B6914',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/02/Gur-300x300.webp',
   },
 
   // ── Sweets ────────────────────────────────────────────────────────────────────
@@ -239,6 +256,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🍬',
     bgColor: '#E8C97A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/webp-express/webp-images/uploads/2025/04/WhatsApp-Image-2024-09-17-at-10.08.18-AM-3-300x300.jpeg.webp',
   },
   {
     id: 'qa-qa-biscuits',
@@ -250,6 +268,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🍪',
     bgColor: '#B8860B',
+    image: 'https://bakhtarmarket.co.uk/wp-content/webp-express/webp-images/uploads/2025/04/WhatsApp-Image-2024-09-17-at-10.02.57-AM-1-300x300.jpeg.webp',
   },
   {
     id: 'halwa-e-aurd',
@@ -262,6 +281,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🍮',
     bgColor: '#C9A227',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/02/Gur-300x300.webp',
   },
   {
     id: 'gosh-feel',
@@ -273,6 +293,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🥐',
     bgColor: '#D4A96A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/05/IMG_7274-300x300.webp',
   },
 
   // ── Spices ────────────────────────────────────────────────────────────────────
@@ -287,6 +308,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🌱',
     bgColor: '#4D7C4D',
+    image: 'https://bakhtarmarket.co.uk/wp-content/webp-express/webp-images/uploads/2025/02/AC55F85E-939D-48D7-B786-817C02AA65EA-300x300.jpg.webp',
   },
   {
     id: 'saffron-afghan',
@@ -300,6 +322,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '✨',
     bgColor: '#C9A227',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/03/205C8376-3F0A-46AC-B1BB-506F988C8C7C-300x300.webp',
   },
   {
     id: 'shorwa-mix',
@@ -312,6 +335,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🌶️',
     bgColor: '#C0392B',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/03/29818D5F-50B3-4D60-9F9E-F42B15F99A22-300x300.webp',
   },
   {
     id: 'coriander-ground',
@@ -324,6 +348,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🫙',
     bgColor: '#7D9B4A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/03/cinnamon-powder-300x300.webp',
   },
 
   // ── Afghan Groceries ──────────────────────────────────────────────────────────
@@ -338,6 +363,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🌹',
     bgColor: '#C0708A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/03/75AC3BF4-BA68-43A0-813E-FDD83AC768D9-300x300.webp',
   },
   {
     id: 'pomegranate-molasses',
@@ -350,6 +376,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🫙',
     bgColor: '#7D1A2A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2024/09/Red-raisin-ghazni-300x300.webp',
   },
   {
     id: 'dried-mulberries',
@@ -362,6 +389,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🫐',
     bgColor: '#D4C5A9',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/04/Mulberries-light-300x300.webp',
   },
   {
     id: 'grape-vinegar',
@@ -373,6 +401,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🍇',
     bgColor: '#5A2D6A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2024/09/Dark-mulberries-300x300.webp',
   },
 
   // ── Dairy ─────────────────────────────────────────────────────────────────────
@@ -387,6 +416,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🥛',
     bgColor: '#F0EDE4',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2022/02/WhatsApp-Image-2024-09-02-at-11.26.20_ac32cc35-300x300.webp',
   },
   {
     id: 'ghee-roghan',
@@ -399,6 +429,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🧈',
     bgColor: '#E8C97A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/webp-express/webp-images/uploads/2025/03/photo_2025-03-20_18-37-16-2-300x300.jpg.webp',
   },
   {
     id: 'paneer-fresh',
@@ -411,6 +442,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🧀',
     bgColor: '#F5DEB3',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/02/Pine-nuts-300x300.webp',
   },
 
   // ── Grains & Legumes ──────────────────────────────────────────────────────────
@@ -425,6 +457,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🫘',
     bgColor: '#C4962A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/03/Chick-peas-afg-300x300.webp',
   },
   {
     id: 'red-lentils',
@@ -437,6 +470,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🫘',
     bgColor: '#D2691E',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/03/FB1338A7-08B3-40F8-BB71-0F56D37A65BC-300x300.webp',
   },
   {
     id: 'yellow-split-peas',
@@ -449,6 +483,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🟡',
     bgColor: '#DAA520',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/05/photo_2025-05-26_19-44-34-300x300.webp',
   },
   {
     id: 'whole-wheat-flour',
@@ -461,6 +496,7 @@ export const PRODUCTS: Product[] = [
     ],
     emoji: '🌾',
     bgColor: '#C4A35A',
+    image: 'https://bakhtarmarket.co.uk/wp-content/uploads/2025/03/CF633FCB-F1BE-4438-87EA-DD64FA2F002D-300x300.webp',
   },
 ]
 

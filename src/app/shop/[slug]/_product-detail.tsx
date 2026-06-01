@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useCart } from '@/components/cart-context'
 import { useWishlist } from '@/components/wishlist-context'
 import { useToast } from '@/components/toast'
@@ -63,12 +64,17 @@ export function ProductDetail({ product, related }: { product: Product; related:
 
           {/* Image */}
           <div
-            className="rounded-3xl aspect-square flex items-center justify-center text-[140px]"
+            className="rounded-3xl aspect-square relative overflow-hidden"
             style={{ backgroundColor: product.bgColor + '22' }}
           >
-            <span role="img" aria-label={product.name} style={{ filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.15))' }}>
-              {product.emoji}
-            </span>
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-cover rounded-3xl"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
           </div>
 
           {/* Info */}

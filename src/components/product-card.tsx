@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { useCart } from './cart-context'
 import { useWishlist } from './wishlist-context'
@@ -41,12 +42,16 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="relative">
         <Link
           href={`/shop/${product.id}`}
-          className="h-44 flex items-center justify-center text-6xl block"
+          className="h-44 block relative overflow-hidden"
           style={{ backgroundColor: product.bgColor + '33' }}
         >
-          <span role="img" aria-label={product.name} style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.15))' }}>
-            {product.emoji}
-          </span>
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 50vw, 25vw"
+          />
         </Link>
         {/* Wishlist heart */}
         <button
