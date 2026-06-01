@@ -37,7 +37,7 @@ export function ProductCard({ product }: { product: Product }) {
   }
 
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col">
+    <div className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 flex flex-col">
       {/* Image */}
       <div className="relative">
         <Link
@@ -49,7 +49,7 @@ export function ProductCard({ product }: { product: Product }) {
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-500 group-hover:scale-110"
             sizes="(max-width: 768px) 50vw, 25vw"
           />
         </Link>
